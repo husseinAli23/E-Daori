@@ -1,0 +1,110 @@
+<style>
+    p{
+        margin-top:10px;
+        margin-bottom:0;
+        color:rgb(230, 230, 230);
+        font-weight: 600;
+        text-align: center;
+        font-size:16px;
+
+    }
+</style>
+<div class="container-profile">
+    <h3 class="card-title text-center text-white" style=" text-align:center">Profile</h3>
+    <div class="card-profile">
+
+        <div class="content-profile">
+            <div class="col1-profile">
+                <img src="<%=result.image %>" alt="">
+                <div>
+                    <h1 style="display: inline-block">
+                        <%=result.name %>
+                    </h1> <button
+                        style="background-color:transparent; outline: none; border:none; width: 20px;height: 20px; display:inline"
+                        onclick=" location.href = '/profile/edit' "><img style="width: 20px;height: 20px;"
+                            src="../../images/icons/edit.png">
+                    </button>
+                </div>
+                <h1>
+                    <%=result.emailAddress %>
+                </h1>
+                <div class="row1">
+                    <a href="/profile/delete"> Deactivate account </a>
+                </div>
+
+            </div>
+            <div class="col2-profile" style="overflow-y: scroll;">
+
+                <h1 class="colorMode">My Favorite Teams</h1>
+
+
+
+                <% result.favoriteTeams.forEach(team=>{ %>
+
+                    <div class="teaminfo">
+                        <table>
+
+                            <tr>
+                                <td>
+                                    <h6>
+                                        <%= team.name %>
+                                    </h6>
+                                </td>
+                                <td>
+                                    <img style="width:40px; height:40px; " class="teaminfo-logo" src="<%=team.logo %>"
+                                        alt="">
+                                </td>
+                            </tr>
+                        </table>
+
+
+
+
+                    </div>
+                    <% })%>
+
+            </div>
+            <div style="overflow-y: scroll" class="col3-profile">
+                <h1>My Votes</h1>
+
+                <% for (let index=0; index< myvotes.length; index++){ %>
+                    <p> &#127894 <%= myvotes[index].elem %></p>
+                    <div class="teaminfo">
+                        <table>
+
+                            <tr>
+                                <td>
+                                    <h6 id="teamOne<%=index%>">
+                                        <%= myvotes[index].teamOne %>
+                                    </h6>
+                                </td>
+                                <td>
+                                    <h6 id="teamTwo<%=index%>">
+                                        <%= myvotes[index].teamTwo %>
+                                    </h6>
+                                </td>
+
+                            </tr>
+                    
+                   
+
+                        
+                        </table>
+
+
+                    </div>
+
+                    
+
+                    <% }%>
+
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>

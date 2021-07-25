@@ -1,0 +1,30 @@
+<script>function change(value){document.getElementById("choice").value= value;}</script>
+<style>
+    h1{
+        color: white
+    }
+</style>
+<div class="quizcontiner">
+<div class="card-quiz">
+    <div class="content-quiz">
+        <h1><%=question %></h1>
+        <br>
+        <form action="/quiz/index" method="POST" class="form">
+        <input type="text" id= "choice" name="choice" class="form__input__text"  hidden="hidden">
+       <div class="answer">
+        <input class="a-button" onclick="change('<%=choices[0] %>')" type="submit" value="<%=choices[0] %>" >
+        <br>
+        <input class="a-button" onclick="change('<%=choices[1] %>')" type="submit" value="<%=choices[1] %>">
+        <br>
+        
+        <input class="a-button" onclick="change('<%=choices[2] %>')" type="submit" value="<%=choices[2] %>" >
+    
+       </div>
+       
+    </form>
+    
+    </div>
+</div>
+</div>
+
+    

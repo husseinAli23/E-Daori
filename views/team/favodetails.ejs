@@ -1,0 +1,77 @@
+<div class="card-team-details">
+    <div class="content-team-details">
+
+<<<<<<< HEAD
+        <form method="POST" action="/team/unfavorite/<%= team.response.team.id %>">
+            <input id="favBtn" type="submit" value="Unfavorite"></input>
+        </form>
+        
+        <%console.log(team.response.team.logo)%>
+
+            <img  src="<%=team.response.team.logo %>" alt="Card image cap">
+=======
+
+<div class="row1">
+    <img  src="<%=team.response.team.logo %>" alt="Card image cap">
+>>>>>>> bc97f97cd3fec4a60439f816c7883c0b657772bc
+           
+    <h2 class="card-title">
+        <%= team.response.team.name %>
+    </h2>
+
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">Goals: <%=team.response.goals.against.total.total%> </li>
+    <li class="list-group-item">lineups: <%=team.response.lineups[0].formation%> </li>
+    <li class="list-group-item">clean sheet: <%=team.response.clean_sheet.total%> </li>
+    <li class="list-group-item">penalty: <%=team.response.penalty.total%> scored: <%=team.response.penalty.scored.percentage%>  missed: <%=team.response.penalty.missed.percentage%> </li>
+    <li class="list-group-item">record: Wins: <%=team.response.fixtures.wins.total%> Draws: <%=team.response.fixtures.draws.total%> loses:  <%=team.response.fixtures.loses.total%></li>
+
+    <li class="list-group-item">played: <%=team.response.fixtures.played.total%> </li>
+</ul>
+
+<form method="POST" action="/team/unfavorite/<%= team.response.team.id %>">
+    <input id="favBtn" type="submit" value="Unfavorite"></input>
+</form>
+
+</div>
+          <div class="row2">
+            <table class="table table-striped">
+                <tr>
+                    <th>Photo</th>
+                    <th>Name</th>
+                    <th>age</th>
+                    <th>nationality</th>
+                    <th>position</th>
+                    <th>goals</th>
+                    <th>minutes</th>
+                  </tr>
+                  
+<% player.response.forEach(function(player){ %>
+<tr>
+  <td><img src="<%= player.player.photo %>" alt=""></td>
+  <td><%= player.player.name %></td>
+  <td><%= player.player.age %></td>
+  <td><%= player.player.nationality %></td>
+  <td><%= player.statistics[0].games.position %></td>
+  <td><%= player.statistics[0].goals.total %></td>
+  <td><%= player.statistics[0].games.minutes %></td>
+</tr>
+<% }) %>
+            </table>
+
+
+          </div>
+
+              
+       
+
+<<<<<<< HEAD
+         
+=======
+>>>>>>> bc97f97cd3fec4a60439f816c7883c0b657772bc
+
+    </div>
+</div>
+
+
+

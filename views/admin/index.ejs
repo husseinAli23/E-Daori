@@ -1,0 +1,126 @@
+<style>
+     li, ul{
+display: inline-block;
+
+  }
+  h1{
+    margin-top:100px;
+  }
+  #matchesNav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    
+    padding:20px;
+  }
+  
+  li a {
+    display: inline;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+  #matchesNav{
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .border-bottom-nav{
+ margin: 0 4%;
+  border-bottom: 1px solid rgb(54, 54, 54);
+
+}
+
+    .table {
+        color: white;
+    }
+    .container .card{
+    width: min-content;
+    height: min-content;
+    margin: 30px;
+    padding: 20px;
+    width:800px;
+
+}
+
+td, th{
+    color:white;
+}
+</style>
+
+<ul class ="match-nav-bar" >
+    <div class="border-bottom-nav"></div>
+
+    <li><a href="/admin/index">Index</a></li>&nbsp
+    <li><a href="/admin/add">Add New</a></li>&nbsp
+
+    <div class="border-bottom-nav"></div>
+  </ul>
+
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <table class="table table-striped">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Question</th>
+                                <th scope="col">Choose 1</th>
+                                <th scope="col">Choose 2</th>
+                                <th scope="col">Correct</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% question.forEach(element=> { %>
+                                <tr>
+                                    <th scope="row">
+                                        <%= element.question %>
+                                    </th>
+                                    <td>
+                                        <%= element.choose1 %>
+                                    </td>
+                                    <td>
+                                        <%= element.choose2 %>
+                                    </td>
+                                    <td>
+                                        <%= element.correct %>
+                                    </td>
+
+
+                                    <!-- edit btn -->
+                                    <td><button style="background-color:transparent; outline: none; border:none;" onclick=" location.href = '/admin/edit?id=<%= element.id %>' "><img src="../../images/icons/edit.png">
+                                        </button></td>
+                                    <!-- detele btn -->
+                                    <td>
+                                        <form action="/admin/delete?id=<%= element.id %>" method="POST">
+                                            <input  type="image" src="../../images/icons/del.png" class="form__input__submit">
+                                        </form>
+                                    </td>
+                                </tr>
+
+                                <% }) %>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

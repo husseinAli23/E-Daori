@@ -1,0 +1,258 @@
+
+.container .card-edit-profile{
+    position: relative;
+    width: 800px;
+    height: 600px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top:1px solid rgba(255, 255, 255, 0.5) ;
+    border-left:1px solid rgba(255, 255, 255, 0.5) ;
+    /* backdrop-filter: blur(5px); */
+}
+.container .card-edit-profile .content-edit-profile{
+    padding: 20px;
+    text-align: center;
+    color: white;
+
+}
+
+
+.container .card-edit-profile .content-edit-profile h2{
+    
+    font-size:50px;
+    color: rgb(255, 255, 255);
+    pointer-events: none;
+}
+
+
+.container .card-edit-profile .content-edit-profile a{
+   
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: white;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+.editfav{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* profile stley */
+
+
+ .card-profile{
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-top:1px solid rgba(255, 255, 255, 0.5) ;
+    border-left:1px solid rgba(255, 255, 255, 0.5) ;
+    /* backdrop-filter: blur(5px); */
+}
+ .content-profile{
+    width: 1000px;
+    height: 500px;
+    padding: 20px;
+    text-align: center;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+
+}
+.col1-profile{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 30px 10px;
+    padding: 50px 10px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+}
+.col1-profile h1{
+margin: 10px;
+}
+
+.col2-profile{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 30px 10px;
+
+    padding: 50px 10px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.col3-profile{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    padding: 50px 10px;
+    margin: 30px 10px;
+
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+}
+.col2-profile  h1{
+margin: 10px;
+} 
+
+ .col3-profile  h1{
+    margin: 10px;
+    }  
+.container .card-profile .content-profile h1{
+    
+    font-size:20px;
+    color: rgb(255, 255, 255);
+    pointer-events: none;
+}
+
+
+.container .card-profile .content-profile a{
+   
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: white;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.teaminfo{
+    display: flex;
+    color: white;
+    
+  
+}
+.teaminfo .teaminfo-logo{
+    height: 5px;
+    width: 5px;
+}
+
+.container .card-profile .content-profile img{
+   height: 100px;
+   width: 100px;
+   border-radius: 50%;
+
+}
+/* Change password stlye */
+
+.container .card-Change-password{
+    position: relative;
+    width: 630px;
+    height: 500px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top:1px solid rgba(255, 255, 255, 0.5) ;
+    border-left:1px solid rgba(255, 255, 255, 0.5) ;
+    /* backdrop-filter: blur(5px); */
+}
+.container .card-Change-password .content-Change-password{
+    padding: 20px;
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+
+}
+.container .card-Change-password .content-Change-password{
+
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.container .card-Change-password .content-Change-password h2{
+    
+    font-size:20px;
+    color: rgb(255, 255, 255);
+    pointer-events: none;
+}
+
+.SaveChanges{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: white;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.container .card-Change-password .content-Change-password a{
+   
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: white;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+.navbar *{
+    display: flex;
+    flex-grow: 1;
+    padding-top: 0;
+    justify-content: space-evenly;
+
+}

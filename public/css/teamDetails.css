@@ -1,0 +1,103 @@
+.container .card-team-details, .card-team-details-table{
+    position: relative;
+    width: 1000px;
+    height:100%;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top:1px solid rgba(255, 255, 255, 0.5) ;
+    border-left:1px solid rgba(255, 255, 255, 0.5) ;
+    /* backdrop-filter: blur(5px); */
+}
+
+.card-team-details-table{
+    right:3%;
+    width: 100%;
+
+}
+
+
+.container .card-team-details .content-team-details{
+    padding: 10%;
+    text-align: center;
+}
+
+.content-team-details{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.content-team-details *{
+flex-grow: 1;
+}
+
+.content-team-details .team-details-head{
+    display:flex;
+    flex-direction: column ;
+}
+
+.container .card-team-details .content-team-details a{
+   
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: white;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.container .card-team-details .content-team-details  img{
+    width: 40%;
+    border-radius: 50%;
+    
+
+}
+
+.container .card-team-details .content-team-details{
+    background-color: rgba(0, 0, 0, 0.034);
+    color:rgb(207, 208, 212)
+}
+.team-details-logo {
+    width:10%;
+    height:10%
+}
+
+.row1{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+
+#team-details-logo{
+    width:30%;
+    margin: 0 auto;
+}
+.player-details-table {
+    width:100%
+}
+.player-details-table span{
+    color:grey;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+td, th{
+    text-align: center;
+}

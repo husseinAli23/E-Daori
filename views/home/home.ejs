@@ -1,0 +1,76 @@
+<%- include('../partials/home.ejs'); %>
+
+<!-- begin -->
+<div class="home-container">
+  
+  <% for (let index = response.response.length-1; index >= 0; index--) {%> 
+
+    <% const element = response.response[index];%> 
+   
+
+  <div class="card"  onclick=" location.href = '/match/details?matchID=<%= element.fixture.id %>' "  data-tilt>
+
+    <div class="content">
+      <div class="Row-img"> 
+
+        <img  src="<%= element.teams.home.logo %>" alt="Card image cap">
+
+        <img  src="<%= element.teams.away.logo %>" alt="Card image cap">
+      </div>
+<div class="under-img">
+  <div class="Row-name-under-img">
+    
+      <div > 
+        <a class="team-name"  href="/team/details?teamID=<%=element.teams.home.id %>"><%= element.teams.home.name %></a>    
+          
+        <a class="team-name"   href="/team/details?teamID=<%= element.teams.away.id %>"><%= element.teams.away.name %></a>
+      </div>
+
+
+  </div>
+  <p class="card-text"><%= element.score.fulltime.home %> &nbsp - &nbsp <%= element.score.fulltime.away %></p>
+
+  <div class="info" data-tilt>
+      
+    <h4  ><%=new Date(response.response[0].fixture.date).toString().substring(0, 21)%>  </h4 >
+    <h4  >Referee:<%= element.fixture.referee %>  </h4 >
+    <h4  ><%= element.fixture.venue.city %> <%= element.fixture.venue.name %></h4 >
+ 
+    <div class="card-body">
+
+
+  
+  </div>
+  
+  </div>
+  
+</div>
+      
+          
+      
+    </div>
+    
+ 
+        </div>
+    
+
+
+    
+   
+
+  <% }%>
+
+</div>
+
+<script type="text/javascript" src="../public/vanilla-tilt.js"></script>
+<script type="text/javascript">
+	VanillaTilt.init(document.querySelector(".card"), {
+		max: 25,
+		speed: 400
+	});
+	
+	//It also supports NodeList
+	VanillaTilt.init(document.querySelectorAll(".card"));
+</script>
+ 
+  <!-- end -->

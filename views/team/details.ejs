@@ -1,0 +1,217 @@
+<style>
+	#favBtn {
+		position: absolute;
+		outline: transparent;
+		border: none;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100px;
+		height: 35px;
+		background-color: azure;
+		border-radius: 75px;
+		line-height: 20px;
+		text-align: center;
+		font-size: 10px;
+		text-decoration: none;
+		color: #2e2828;
+		transition: 0.5s;
+		text-transform: uppercase;
+
+
+	}
+
+	#favBtn.active {
+		background-color: transparent;
+		color: transparent;
+
+	}
+
+	#favBtn:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: #e91e63;
+		width: 20%;
+		height: 40%;
+		transition: 0.5s;
+		z-index: -1;
+		transform: translateX(-200px) rotate(-325deg);
+		opacity: 0;
+
+	}
+
+	#favBtn.active:before {
+		left: 35.5px;
+		transform: translateX(0) rotate(35deg);
+		border-top-left-radius: 75px;
+		border-bottom-left-radius: 75px;
+		opacity: 1;
+	}
+
+	#favBtn:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: #e91e63;
+		width: 20%;
+		height: 40%;
+		transition: 0.5s;
+		z-index: -1;
+		transform: translateX(200px) rotate(325deg);
+		opacity: 0;
+
+	}
+
+	#favBtn.active:after {
+		right: 35.5px;
+		transform: translateX(0) rotate(-35deg);
+		border-top-right-radius: 75px;
+		border-bottom-right-radius: 75px;
+		opacity: 1;
+
+	}
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+	</script>
+<div class="main-container">
+	<div class="card-team-details">
+		<div class="content-team-details">
+
+
+			<div class="row1">
+				<div class="team-details-head">
+					<img id="team-details-logo" src="<%=team.response.team.logo %>" alt="Card image cap">
+
+					<h2 class="card-title">
+						<%= team.response.team.name %>
+					</h2>
+					<br />
+					<input  hidden="hidden" id="favoriteStatus" value="<%= favorite%>">
+					<form id="voteChoice" action="/team/favorite?teamID=<%= team.response.team.id%>" method="POST"
+						class="form">
+
+						<input hidden="hidden" name="img" type="text" value=" <%= team.response.team.logo%>">
+						<input hidden="hidden" name="teamId" type="text" value=" <%= team.response.team.id%>">
+						<input hidden="hidden" name="teamName" type="text" value="<%= team.response.team.name%>">
+
+						<button id="favBtn" type="submit">Favorite</button>
+					</form>
+
+
+
+
+					<div class="card-team-details-table">
+						<table class="player-details-table">
+							<tr>
+								<td><span>Goals &nbsp</span>
+									<%=team.response.goals.against.total.total%>
+								</td>
+								<td><span>Clean Sheet &nbsp</span>
+									<%=team.response.clean_sheet.total%>
+								</td>
+								<td><span>Played &nbsp</span>
+									<%=team.response.fixtures.played.total%>
+								</td>
+							</tr>
+							<tr>
+								<td><span>Wins &nbsp</span>
+									<%=team.response.fixtures.wins.total%>
+								</td>
+								<td> <span>Draws &nbsp</span>
+									<%=team.response.fixtures.draws.total%>
+								</td>
+								<td><span>Loses &nbsp</span>
+									<%=team.response.fixtures.loses.total%>
+								</td>
+								</td>
+							</tr>
+
+							<tr>
+								<td><span>Penalty &nbsp</span>
+									<%=team.response.penalty.total%>
+								</td>
+								<td><span>Scored &nbsp</span>
+									<%=(parseFloat(team.response.penalty.scored.percentage)).toFixed(1)%>&#37
+								</td>
+								<td><span>Missed &nbsp</span>
+									<%=( parseFloat(team.response.penalty.missed.percentage)).toFixed(1)%>&#37
+								</td>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><span>Lineups &nbsp</span>
+									<%=team.response.lineups[0].formation%>
+								</td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+
+
+					<script type="text/javascript">
+
+						$(document).ready(function () {
+							
+							if ($("#favoriteStatus").val() == "t") {
+								
+								$("#favBtn").addClass("active")
+							}
+							$("#favBtn").click(function () {
+								$("#favBtn").addClass("active")
+								setTimeout(function () {
+									//window.location.href = '../' + "team/favorite?teamID=<%= team.response.team.id%>&teamName=<%= team.response.team.name%>&img=<%= team.response.team.logo%>&_method=POST"
+
+								}, 1000);
+							})
+						})
+					</script>
+
+
+
+				</div>
+			</div>
+			<div class="row2">
+				<table class="player-details-table">
+					<tr>
+						<th></th>
+						<th>Name</th>
+						<th>Age</th>
+						<th>NAL</th>
+						<th>Position</th>
+						<th>Goals</th>
+						<th>Minutes</th>
+					</tr>
+					<% player.response.forEach(function(player){ %>
+						<tr>
+							<td><img src="<%= player.player.photo %>" alt=""></td>
+							<td>
+								<%= player.player.name %>
+							</td>
+							<td>
+								<%= player.player.age %>
+							</td>
+							<td>
+								<%= player.player.nationality %>
+							</td>
+							<td>
+								<%= player.statistics[0].games.position %>
+							</td>
+							<td>
+								<%= player.statistics[0].goals.total %>
+							</td>
+							<td>
+								<%= player.statistics[0].games.minutes %>
+							</td>
+						</tr>
+						<% }) %>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

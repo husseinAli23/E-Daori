@@ -1,0 +1,62 @@
+<head>
+    <link rel="stylesheet" href="css/auth.css">
+
+    <style>
+        body * {
+            color: white;
+        }
+    </style>
+</head>
+
+<div class="card-edit-profile">
+    <div class="content-edit-profile">
+
+        <form action="/profile/edit" method="POST" class="form" >
+            <h2> Edit Your account</h2>
+            <br>
+            <input type="text" name="name" style="color: white;" class="form__input__text" placeholder="Enter your name"
+                value="<%= result.name %>">
+
+            <input hidden="hidden" id="profileImage" name="image" type="file" class="form__input__text">
+
+            <% result.favoriteTeams.forEach(team=> { %>
+
+
+                <div class="editfav">
+                    <h6>
+                        <%= team.name %>
+                    </h6>
+
+                        <button
+                        style="background-color:transparent; outline: none; border:none; width: 30px;height: 30px; display:inline"
+                        onclick=" location.href = '/profile/edit/delete?id='+'<%=team.teamId%>' "><img style="width: 30px;height: 30px;"
+                            src="../../images/icons/del.png">
+                    </button>
+                </div>
+
+
+
+                <% }) %>
+
+
+
+
+                    <input style="color:black; position:absolute; top:85%; left:43%" type="submit" value="Save changes" class="form__input__submit">
+
+        </form>
+        <div>
+            <input style="display: inline-block; width:440px;" type="password"
+                value="<%= result.password %>" class="form__input__submit">
+            <button
+                style="background-color:transparent; outline: none; border:none; width: 30px;height: 30px; display:inline"
+                onclick=" location.href = '/edit/Password' "><img style="width: 30px;height: 30px;"
+                    src="../../images/icons/edit.png">
+            </button>
+        </div>
+    </div>
+
+</div>
+
+
+
+</div>
